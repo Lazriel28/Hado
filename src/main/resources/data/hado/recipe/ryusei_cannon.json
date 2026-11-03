@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "INI",
+    "ICI",
+    " I "
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "N": {
+      "item": "minecraft:end_rod"
+    },
+    "C": {
+      "item": "hado:impact_core"
+    }
+  },
+  "result": {
+    "id": "hado:ryusei_cannon",
+    "count": 1
+  }
+}

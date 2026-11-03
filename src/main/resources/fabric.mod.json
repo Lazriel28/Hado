@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "hado",
+  "version": "${version}",
+  "name": "HADO — Anime Arsenal",
+  "description": "An anime-styled combat overhaul: ink-brush impact frames, hit-stop, camera shake and a hand-forged arsenal of impossible weapons. Built to look insane and cost almost nothing.",
+  "authors": [
+    "HADO"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/hado/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.hado.Hado"
+    ],
+    "client": [
+      "dev.hado.client.HadoClient"
+    ]
+  },
+  "mixins": [
+    "hado.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

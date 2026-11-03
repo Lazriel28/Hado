@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " C ",
+    " P "
+  ],
+  "key": {
+    "C": {
+      "item": "hado:impact_core"
+    },
+    "P": {
+      "item": "minecraft:netherite_pickaxe"
+    }
+  },
+  "result": {
+    "id": "hado:meteor_drill",
+    "count": 1
+  }
+}

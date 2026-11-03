@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "NTN"
+  ],
+  "key": {
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "T": {
+      "item": "hado:tamashii_core"
+    }
+  },
+  "result": {
+    "id": "hado:impact_core",
+    "count": 1
+  }
+}

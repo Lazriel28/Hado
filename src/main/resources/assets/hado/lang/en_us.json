@@ -1,0 +1,23 @@
+{
+  "itemGroup.hado.arsenal": "HADO — Arsenal",
+  "item.hado.tamashii_core": "Soul Core",
+  "item.hado.impact_core": "Impact Core",
+  "item.hado.kaze_katana": "Gale Fang",
+  "item.hado.ryusei_cannon": "Stellar Cannon",
+  "item.hado.kurotama": "Kurotama",
+  "item.hado.senbon": "Senbon Storm",
+  "item.hado.meteor_drill": "Meteor Drill",
+  "item.hado.zettai_barrier": "Absolute Barrier",
+  "item.hado.stella_remote": "Starfall Remote",
+  "item.hado.style_scroll": "Gensō Scroll",
+  "item.hado.kaze_katana.tip": "Right-click: Gale Step — a dash-cut through everything in front of you.",
+  "item.hado.ryusei_cannon.tip": "Right-click: mark a point, then call the beam down on it.",
+  "item.hado.kurotama.tip": "Right-click: throw. Pulls, then consumes, everything in range.",
+  "item.hado.senbon.tip": "Right-click: five needles down one line.",
+  "item.hado.meteor_drill.tip": "Right-click: overclock the drive for Haste III.",
+  "item.hado.zettai_barrier.tip": "Right-click: a short perfect-guard window.",
+  "item.hado.stella_remote.tip": "Right-click: cycle visual intensity (0-3).",
+  "item.hado.style_scroll.tip": "Right-click: cycle the cinematic palette.",
+  "hado.config.title": "HADO",
+  "hado.config.intensity": "Intensity"
+}
