@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RRA",
+    "RAI",
+    "LAK"
+  ],
+  "key": {
+    "R": {
+      "item": "hado:ryusei_cannon"
+    },
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "I": {
+      "item": "hado:recurve_map"
+    },
+    "L": {
+      "item": "hado:recurve_map"
+    },
+    "K": {
+      "item": "hado:recurve_map"
+    }
+  },
+  "result": {
+    "item": "hado:recurve_map",
+    "count": 1
+  }
+}

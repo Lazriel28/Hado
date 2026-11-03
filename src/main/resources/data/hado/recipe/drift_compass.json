@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " E ",
+    "CRC",
+    " BK"
+  ],
+  "key": {
+    "C": {
+      "item": "hado:loom_thread"
+    },
+    "E": {
+      "item": "hado:marker_remote"
+    },
+    "R": {
+      "item": "hado:marker_remote"
+    },
+    "B": {
+      "item": "minecraft:red_dye"
+    },
+    "K": {
+      "item": "minecraft:phantom_membrane"
+    }
+  },
+  "result": {
+    "item": "hado:drift_compass",
+    "count": 1
+  }
+}

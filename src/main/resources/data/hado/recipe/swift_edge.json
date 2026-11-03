@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "RAR",
+    "RAI"
+  ],
+  "key": {
+    "R": {
+      "item": "hado:ryusei_cannon"
+    },
+    "A": {
+      "item": "minecraft:arrow"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "hado:swift_edge",
+    "count": 1
+  }
+}

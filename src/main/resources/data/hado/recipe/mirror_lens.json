@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GRL",
+    "ERE",
+    "LHE"
+  ],
+  "key": {
+    "G": {
+      "item": "hado:marker_beacon"
+    },
+    "R": {
+      "item": "minecraft:red_stone"
+    },
+    "L": {
+      "item": "hado:marker_remote"
+    },
+    "E": {
+      "item": "hado:marker_pen"
+    },
+    "H": {
+      "item": "hado:marker_remote"
+    }
+  },
+  "result": {
+    "item": "hado:mirror_lens",
+    "count": 1
+  }
+}

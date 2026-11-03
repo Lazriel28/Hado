@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "HTR",
+    "IRA",
+    "IGM"
+  ],
+  "key": {
+    "H": {
+      "item": "minecraft:red_stone"
+    },
+    "R": {
+      "item": "minecraft:iron_dust"
+    },
+    "I": {
+      "item": "minecraft:iron_dust"
+    },
+    "A": {
+      "item": "minecraft:glass"
+    },
+    "T": {
+      "item": "minecraft:glass"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "M": {
+      "item": "minecraft:glass"
+    }
+  },
+  "result": {
+    "item": "hado:marker_remote",
+    "count": 1
+  }
+}

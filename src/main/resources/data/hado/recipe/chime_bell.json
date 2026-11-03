@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BSW",
+    "CSC",
+    "SGL"
+  ],
+  "key": {
+    "B": {
+      "item": "hado:marker_beacon"
+    },
+    "S": {
+      "item": "hado:marker_pen"
+    },
+    "C": {
+      "item": "minecraft:chain"
+    },
+    "W": {
+      "item": "minecraft:glass_bottle"
+    },
+    "G": {
+      "item": "minecraft:glow_berries"
+    },
+    "L": {
+      "item": "hado:glimmer_lantern"
+    }
+  },
+  "result": {
+    "item": "hado:chime_bell",
+    "count": 1
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EEL",
+    "WWE",
+    "RDR"
+  ],
+  "key": {
+    "E": {
+      "item": "minecraft:barrier_lock"
+    },
+    "L": {
+      "item": "minecraft:barrier_lock"
+    },
+    "W": {
+      "item": "minecraft:barrier_lock"
+    },
+    "R": {
+      "item": "minecraft:barrier_lock"
+    },
+    "D": {
+      "item": "minecraft:barrier_lock"
+    }
+  },
+  "result": {
+    "item": "hado:marker_pen",
+    "count": 136
+  }
+}

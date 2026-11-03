@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "HRA",
+    "WBA",
+    "WAB"
+  ],
+  "key": {
+    "H": {
+      "item": "hado:kaze_katana"
+    },
+    "R": {
+      "item": "minecraft:red_dye"
+    },
+    "A": {
+      "item": "hado:marker_remote"
+    },
+    "B": {
+      "item": "minecraft:glow_berries"
+    },
+    "W": {
+      "item": "minecraft:wooden_button"
+    }
+  },
+  "result": {
+    "item": "hado:anchor_stamp",
+    "count": 1
+  }
+}

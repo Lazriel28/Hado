@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSA",
+    "AAA",
+    "MSA"
+  ],
+  "key": {
+    "S": {
+      "item": "hado:stella_remote"
+    },
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "M": {
+      "item": "minecraft:red_dye"
+    }
+  },
+  "result": {
+    "item": "hado:marker_beacon",
+    "count": 1
+  }
+}

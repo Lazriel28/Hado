@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "KGA",
+    "ARA",
+    "ARA"
+  ],
+  "key": {
+    "K": {
+      "item": "hado:homing_kite"
+    },
+    "G": {
+      "item": "hado:marker_beacon"
+    },
+    "A": {
+      "item": "minecraft:red_stone"
+    },
+    "R": {
+      "item": "hado:glimmer_lantern"
+    }
+  },
+  "result": {
+    "item": "hado:homing_kite",
+    "count": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSA",
+    "RRR",
+    "AAR"
+  ],
+  "key": {
+    "S": {
+      "item": "hado:stella_remote"
+    },
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "R": {
+      "item": "minecraft:string"
+    }
+  },
+  "result": {
+    "item": "hado:loom_thread",
+    "count": 1
+  }
+}

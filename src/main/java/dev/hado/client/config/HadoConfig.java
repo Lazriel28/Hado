@@ -9,9 +9,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-/**
- * User-facing taste controls. Everything here is visual only — nothing in this
- * file can change gameplay outcomes, which is why it lives on the client.
+/** User-facing taste controls. Everything here is visual only — nothing in this
+ *  file can change gameplay outcomes, which is why it lives on the client.
  */
 public final class HadoConfig {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();

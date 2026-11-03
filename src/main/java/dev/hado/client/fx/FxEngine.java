@@ -1,6 +1,8 @@
 package dev.hado.client.fx;
 
 import dev.hado.client.config.HadoConfig;
+import dev.hado.client.gui.HadoMarkerScreen;
+import dev.hado.client.gui.HadoPanelScreen;
 import dev.hado.fx.FxKind;
 import dev.hado.fx.FxStyle;
 import dev.hado.net.FxPayload;
@@ -10,13 +12,12 @@ import net.minecraft.util.math.Vec3d;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
 
-/**
- * The director. Turns an {@link FxPayload} into a pooled {@link ScreenFx}, and
- * decides how much punch it deserves.
+/** The director. Turns an {@link FxPayload} into a pooled {@link ScreenFx}, and
+ *  decides how much punch it deserves.
  *
- * <p>Allocation discipline: a fixed pool of instances is recycled, the projection
- * scratch objects are static, and a frame with no active effects does no work at
- * all beyond one boolean check.
+ *  <p>Allocation discipline: a fixed pool of instances is recycled, the projection
+ *  scratch objects are static, and a frame with no active effects does no work at
+ *  all beyond one boolean check.
  */
 public final class FxEngine {
     public static final int POOL_SIZE = 16;
@@ -50,13 +51,23 @@ public final class FxEngine {
             case PARRY -> new Profile(560, 0.22f, 80);
             case DRILL -> new Profile(380, 0.50f, 60);
             case TITLE -> new Profile(950, 0.0f, 0);
+            case SLASHBACK -> new Profile(560, 0.35f, 95);
+            case RETURN -> new Profile(700, 0.20f, 0);
+            case BEACON -> new Profile(500, 0.16f, 0);
+            case TETHER -> new Profile(600, 0.18f, 0);
+            case CHIME -> new Profile(360, 0.08f, 0);
+            case GLOW -> new Profile(520, 0.10f, 0);
+            case TAIL -> new Profile(420, 0.12f, 0);
+            case SWEEP -> new Profile(480, 0.14f, 0);
+            case STAMP -> new Profile(320, 0.30f, 60);
+            case REVEAL -> new Profile(420, 0.12f, 0);
+            case LENS -> new Profile(300, 0.18f, 0);
         };
     }
 
     public static void play(FxPayload payload) {
         HadoConfig config = HadoConfig.get();
 
-        // The two gadgets are pure configuration messages, routed before any drawing.
         if (payload.kind() == FxKind.TITLE && payload.title() != null) {
             handleControlMessage(payload.title());
         }
@@ -97,14 +108,22 @@ public final class FxEngine {
         HadoConfig config = HadoConfig.get();
         if (title.equals("PANEL")) {
             MinecraftClient client = MinecraftClient.getInstance();
-            client.execute(() -> client.setScreen(new dev.hado.client.gui.HadoPanelScreen()));
-        } else if (title.startsWith("FX:")) {
-            try {
-                config.intensity = Math.max(0, Math.min(3, Integer.parseInt(title.substring(3))));
-                config.save();
-            } catch (NumberFormatException ignored) {
-                // Malformed message from an unknown sender: ignore rather than crash.
-            }
+            client.execute(() -> client.setScreen(new HadoPanelScreen()));
+        } else if (title.equals("MARKER") || title.startsWith("MARKER:")) {
+            String note = title.startsWith("MARKER:") ? title.substring(7) : "";
+            MinecraftClient client = MinecraftClient.getInstance();
+            client.execute(() -> client.setScreen(new HadoMarkerScreen()));
+        } else if (title.startsWith("RESTORE:")) {
+            String note = title.substring(8);
+            MinecraftClient client = MinecraftClient.getInstance();
+            client.execute(() -> {
+                FxEngine.play(FxPayload.of(FxKind.RETURN, FxStyle.CURSED, 1.2f,
+                        0.0, 0.0, 0.0, (int) System.nanoTime(), "REWIND"));
+                if (!note.isEmpty()) {
+                    FxEngine.play(FxPayload.of(FxKind.TITLE, FxStyle.CURSED, 1.0f,
+                            0.0, 0.0, 0.0, (int) System.nanoTime(), note));
+                }
+            });
         } else if (title.startsWith("STYLE:")) {
             String name = title.substring(6);
             for (FxStyle style : FxStyle.values()) {
@@ -113,12 +132,18 @@ public final class FxEngine {
                     config.save();
                 }
             }
+        } else if (title.startsWith("FX:")) {
+            try {
+                config.intensity = Math.max(0, Math.min(3, Integer.parseInt(title.substring(3))));
+                config.save();
+            } catch (NumberFormatException ignored) {
+                // Malformed message from an unknown sender: ignore rather than crash.
+            }
         }
     }
 
     private static ScreenFx obtain() {
         if (activeCount >= POOL_SIZE) {
-            // Saturated: recycle the oldest slot rather than growing the pool.
             ScreenFx oldest = POOL[0];
             System.arraycopy(POOL, 1, POOL, 0, POOL_SIZE - 1);
             POOL[POOL_SIZE - 1] = oldest;
@@ -174,10 +199,9 @@ public final class FxEngine {
         INVERSE.set(camera.getRotation()).conjugate();
         SCRATCH.rotate(INVERSE);
 
-        // Camera space: +x right, +y up, -z forward.
         float depth = -SCRATCH.z;
         if (depth <= 0.12f) {
-            return; // behind the player: fall back to centre
+            return;
         }
         double fov = Math.toRadians(client.options.getFov().getValue());
         float tanHalf = (float) Math.tan(fov * 0.5);

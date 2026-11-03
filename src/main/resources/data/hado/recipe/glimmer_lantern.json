@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DAR",
+    "RAA",
+    "RAA"
+  ],
+  "key": {
+    "D": {
+      "item": "minecraft:dragon_head"
+    },
+    "A": {
+      "item": "hado:glimmer_lantern"
+    },
+    "R": {
+      "item": "minecraft:red_dye"
+    }
+  },
+  "result": {
+    "item": "hado:glimmer_lantern",
+    "count": 1
+  }
+}

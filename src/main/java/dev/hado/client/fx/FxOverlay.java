@@ -84,9 +84,10 @@ public final class FxOverlay {
             if (quality >= 1 && (fx.kind == FxKind.PARRY || fx.kind == FxKind.IMPLOSION)) {
                 drawHex(ctx, fx, p, env, w, h);
             }
-            if (quality >= 1 && (fx.kind == FxKind.ORBITAL || fx.kind == FxKind.IMPLOSION)) {
+            if (quality >= 1 && isRinger(fx.kind)) {
                 drawRing(ctx, fx, p, env, w, h, 1.9f, 0.55f);
             }
+
             if (quality >= 2) {
                 drawFlare(ctx, fx, p, env, w, h);
             }
@@ -225,6 +226,18 @@ public final class FxOverlay {
         RenderSystem.setShaderColor(1, 1, 1, 1);
     }
 
+    private static boolean isRinger(FxKind kind) {
+        return FxKind.isMarkerKind(kind) || kind == FxKind.ECHO || kind == FxKind.YIN_YANG || kind == FxKind.ORBITAL || kind == FxKind.IMPLOSION;
+    }
+
+    private static boolean isRinger(FxKind kind) {
+        return FxKind.isMarkerKind(kind) || kind == FxKind.ECHO || kind == FxKind.YIN_YANG || kind == FxKind.ORBITAL || kind == FxKind.IMPLOSION;
+    }
+
+    private static boolean isTither(FxKind kind) {
+        return FxKind.isMarkerKind(kind);
+    }
+
     private static void drawFlash(DrawContext ctx, ScreenFx fx, float p, int w, int h) {
         float flash = switch (fx.kind) {
             case IMPACT -> 0.50f;
@@ -239,6 +252,7 @@ public final class FxOverlay {
         if (flash <= 0.0f) {
             return;
         }
+
         // Two-hit flash: a hard spike, then a softer afterglow.
         float a = p < 0.06f ? 1.0f : (float) Math.pow(1.0f - Math.min(1.0f, p / 0.35f), 2.2);
         float alpha = MathHelper.clamp(a * flash * Math.min(1.35f, fx.intensity), 0.0f, 0.92f);
@@ -267,7 +281,7 @@ public final class FxOverlay {
         ctx.getMatrices().translate(w * 0.5f, y, 0.0f);
         ctx.getMatrices().scale(scale, scale, 1.0f);
 
-        int argb = (((int) (alpha * 255)) << 24) | (fx.style.hot & 0xFFFFFF);
+        int argb = (((int) (alpha * 255)) << 24) | (fx.style.hot() & 0xFFFFFF);
         ctx.drawCenteredTextWithShadow(font, text, 0, 0, argb);
         ctx.drawCenteredTextWithShadow(font, text, -1, 1, (((int) (alpha * 160)) << 24));
         ctx.getMatrices().pop();

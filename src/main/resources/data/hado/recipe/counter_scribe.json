@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RSR",
+    "SCS",
+    "PPP"
+  ],
+  "key": {
+    "R": {
+      "item": "hado:recurve_map"
+    },
+    "S": {
+      "item": "hado:marker_pen"
+    },
+    "C": {
+      "item": "minecraft:compass"
+    },
+    "P": {
+      "item": "minecraft:red_dye"
+    }
+  },
+  "result": {
+    "item": "hado:counter_scribe",
+    "count": 1
+  }
+}
